@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Advance Selectors</title>
+    <style>
+        h1 {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* if p is contained by any li and which is contained by div */
+        /* div li p {
+            color: aquamarine;
+            background: lightsalmon;
+            font-weight:bold;
+        } */
+
+        /* div p{
+    background-color: green;
+} */
+
+        /* this is the new advanced selector in css to know the depth of p impacted inside div class */
+        /* div jab direct parent hai p ka so ye property kaam aayegi or implememt hogi */
+        /* div ke under jo direct child hai wo impacted hoga iss case mein */
+        /* if p is right inside div , then this css will be applied */
+        /* div>p {
+            /* color: yellow;
+            background-color: green;
+            font-weight: bold;
+        } */
+        */
+
+        /* Another type of advanced css selector */
+        /* if p is right after div then this css will be applied i.e p is the next sibling of div */
+        /* div hai pichla sibling p ka toh ye property follow hogi */
+        /* So div se pehle wale sibling wale p par ye implement ho jayega */
+        div + p {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>There is more on CSS selectors</h1>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <!-- li.item*4 -->
+                <li class="item">
+                    <p>This is perhaps another paragraph inside li</p>
+                </li>
+                <li>this will not get affected.</li>
+                <p>this is a para inside ul</p>
+            </ul>
+            <p>This is a paragraph</p>
+        </div>
+        <p>This is another paragraph</p>
+    </div>
+    <p>this is outermost paragraph</p>
+</body>
+
+</html>
